@@ -1,32 +1,29 @@
 public class Main {
     public static void main(String[] args) {
-        Car car = new Car();
-        Car car2 = new Car();
-        car.modelName = "car1";
-        car2.modelName = "car2";
-        car.wheelsCount = 4;
-        car2.wheelsCount = 4;
+        Car[] carExamination = {
+                new Car("Car1", 4),
+                new Car("Car2", 4)
+        };
 
-        Truck truck = new Truck();
-        Truck truck2 = new Truck();
-        truck.modelName = "truck1";
-        truck2.modelName = "truck2";
-        truck.wheelsCount = 6;
-        truck2.wheelsCount = 8;
+        Truck[] truckExamination = {
+                new Truck("Truck1", 6),
+                new Truck("Truck2", 8)
+        };
 
-        Bicycle bicycle = new Bicycle();
-        Bicycle bicycle2 = new Bicycle();
-        bicycle.modelName = "bicycle1";
-        bicycle2.modelName = "bicycle2";
-        bicycle.wheelsCount = 2;
-        bicycle2.wheelsCount = 2;
+        Bicycle[] bicycleExamination = {
+                new Bicycle("Bicycle1", 2),
+                new Bicycle("Bicycle2", 2)
+        };
+        technicalInspection(carExamination);
+        technicalInspection(truckExamination);
+        technicalInspection(bicycleExamination);
 
-        ServiceStation station = new ServiceStation();
-        station.check(car, null, null);
-        station.check(car2, null, null);
-        station.check(null, bicycle, null);
-        station.check(null, bicycle2, null);
-        station.check(null, null, truck);
-        station.check(null, null, truck2);
+
+    }
+
+    public static void technicalInspection(Transport[] transportExamination) {
+        for (int i = 0; i < transportExamination.length; i++) {
+            transportExamination[i].serviceStation();
+        }
     }
 }
