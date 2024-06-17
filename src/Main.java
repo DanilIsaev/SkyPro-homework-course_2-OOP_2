@@ -14,16 +14,13 @@ public class Main {
                 new Bicycle("Bicycle1", 2),
                 new Bicycle("Bicycle2", 2)
         };
-        technicalInspection(carExamination);
-        technicalInspection(truckExamination);
-        technicalInspection(bicycleExamination);
+
+        ServiceStation serviceStation = new ServiceStation();
+        serviceStation.check(carExamination);
+        serviceStation.check(truckExamination);
+        serviceStation.check(bicycleExamination);
 
 
     }
 
-    public static void technicalInspection(Transport[] transportExamination) {
-        for (int i = 0; i < transportExamination.length; i++) {
-            transportExamination[i].serviceStation();
-        }
-    }
 }
